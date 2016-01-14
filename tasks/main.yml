@@ -22,4 +22,6 @@
 - name: Update composer
   command:
     composer self-update
+  register: composer_update
+  changed_when: "'Updating to version' in composer_update.stdout"
   sudo: yes
